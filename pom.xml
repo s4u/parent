@@ -26,7 +26,7 @@
 
     <groupId>com.github.s4u</groupId>
     <artifactId>parent</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>S4U parent POM</name>
@@ -60,7 +60,7 @@
         <connection>scm:git:git@github.com:s4u/parent.git</connection>
         <developerConnection>${project.scm.connection}</developerConnection>
         <url>https://github.com/s4u/parent</url>
-        <tag>parent-1.0.0</tag>
+        <tag>HEAD</tag>
     </scm>
 
     <issueManagement>
