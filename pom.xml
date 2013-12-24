@@ -58,7 +58,7 @@
     </developers>
 
     <scm>
-        <connection>scm:git:ssh://git@github.com:s4u/parent.git</connection>
+        <connection>scm:git:git@github.com:s4u/parent.git</connection>
         <developerConnection>${project.scm.connection}</developerConnection>
         <url>https://github.com/s4u/parent</url>
         <tag>HEAD</tag>
