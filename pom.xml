@@ -104,7 +104,6 @@
                     <version>1.0-beta-2</version>
                     <configuration>
                         <scmBranch>gh-pages</scmBranch>
-                        <skipCheckin>true</skipCheckin>
                     </configuration>
                 </plugin>
                 <plugin>
