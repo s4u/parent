@@ -67,10 +67,16 @@
         <url>${project.scm.url}/issues</url>
     </issueManagement>
 
+    <ciManagement>
+        <system>Travis</system>
+        <url>https://travis-ci.org/s4u/${project.artifactId}</url>
+    </ciManagement>
+
     <properties>
         <maven.compiler.source>1.7</maven.compiler.source>
         <maven.compiler.target>1.7</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
 
     <build>
