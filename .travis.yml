@@ -1,2 +1,8 @@
 language: java
+before_install: git clone --depth 1 -b travis git@github.com:s4u/parent.git target/travis
+script: '[ ${TRAVIS_PULL_REQUEST} = ''false'' ] && mvn clean deploy -s target/travis/settings.xml || mvn clean verify'
 
+env:
+  global:
+  - secure: EozM9YwDvaoQnTFIKDWCa7K76amwpkAILBt2QQpHpl0DIgZvPqEQixEMeI4YXECh/sdrFRsJveS8QGJrJta4Uhni2pCh2VdxNDxNDY2arsqzXU1lS7s8x6I753Dh5VbdDHRLXAMxHnVQNnnbeUoDv7rdaPUBVQnaLKGxcG4KC1Q=
+  - secure: D/0p02E8WkHlTeY8MAMYPVXqTE6HT6gWMTJ9hvEDpDpOgiZlGyVtNcZqrSAtMhAX1vFR+9C4qB+U1+Nc1qyRWFKFzcN4yySXPv5H0lBcp18bz8G69PZKU5B6KpGQBzwLHcKlMnFmNKvra9qohcrAz5jdMwM1VPUkGIFR8WHEHa4=
