@@ -62,13 +62,6 @@
         <tag>HEAD</tag>
     </scm>
 
-    <distributionManagement>
-        <site>
-            <id>github-pages</id>
-            <url>${project.scm.connection}</url>
-        </site>
-    </distributionManagement>
-
     <issueManagement>
         <system>github</system>
         <url>${project.scm.url}/issues</url>
@@ -94,47 +87,41 @@
             <plugins>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-compiler-plugin</artifactId>
-                    <configuration>
-                        <source>${maven.compiler.source}</source>
-                        <target>${maven.compiler.target}</target>
-                    </configuration>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-release-plugin</artifactId>
-                    <configuration>
-                        <preparationGoals>clean</preparationGoals>
-                        <releaseProfiles>release</releaseProfiles>
-                        <scmCommentPrefix>[maven-release-plugin][ci skip]</scmCommentPrefix>
-                    </configuration>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-scm-publish-plugin</artifactId>
-                    <version>1.0-beta-2</version>
-                    <configuration>
-                        <scmBranch>gh-pages</scmBranch>
-                    </configuration>
+                    <version>1.0</version>
                 </plugin>
                 <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-site-plugin</artifactId>
-                    <configuration>
-                        <skipDeploy>true</skipDeploy>
-                    </configuration>
-                    <dependencies>
-                        <dependency>
-                            <groupId>org.apache.maven.doxia</groupId>
-                            <artifactId>doxia-module-markdown</artifactId>
-                            <version>1.5</version>
-                        </dependency>
-                    </dependencies>
+                    <groupId>com.github.s4u.plugins</groupId>
+                    <artifactId>sitemapxml-maven-plugin</artifactId>
+                    <version>1.0.0</version>
+                </plugin>
+                <plugin>
+                    <groupId>com.github.s4u.plugins</groupId>
+                    <artifactId>pgpverify-maven-plugin</artifactId>
+                    <version>1.0.0</version>
                 </plugin>
             </plugins>
         </pluginManagement>
 
         <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>${maven.compiler.source}</source>
+                    <target>${maven.compiler.target}</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <configuration>
+                    <preparationGoals>clean</preparationGoals>
+                    <goal>deploy</goal>
+                    <releaseProfiles>release</releaseProfiles>
+                    <scmCommentPrefix>[maven-release-plugin][ci skip]</scmCommentPrefix>
+                </configuration>
+            </plugin>
             <plugin>
                 <groupId>org.sonatype.plugins</groupId>
                 <artifactId>nexus-staging-maven-plugin</artifactId>
@@ -147,6 +134,9 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-scm-publish-plugin</artifactId>
+                <configuration>
+                    <scmBranch>gh-pages</scmBranch>
+                </configuration>
                 <executions>
                     <execution>
                         <id>scm-publish</id>
@@ -172,6 +162,16 @@
                         </configuration>
                     </execution>
                 </executions>
+                <configuration>
+                    <skipDeploy>true</skipDeploy>
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.apache.maven.doxia</groupId>
+                        <artifactId>doxia-module-markdown</artifactId>
+                        <version>1.5</version>
+                    </dependency>
+                </dependencies>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
