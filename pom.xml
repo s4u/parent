@@ -119,7 +119,7 @@
                     <preparationGoals>clean</preparationGoals>
                     <goal>deploy</goal>
                     <releaseProfiles>release</releaseProfiles>
-                    <scmCommentPrefix>[maven-release-plugin][ci skip]</scmCommentPrefix>
+                    <scmCommentPrefix>[maven-release-plugin][ci skip]_</scmCommentPrefix>
                 </configuration>
             </plugin>
             <plugin>
