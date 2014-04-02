@@ -28,14 +28,14 @@
     <version>1.0.3-SNAPSHOT</version>
     <packaging>pom</packaging>
 
-    <name>S4U parent POM</name>
-    <description>S4U parent POM for our projects</description>
-    <url>https://github.com/s4u/parent</url>
+    <name>Simplify4U parent POM</name>
+    <description>Simplify4U parent POM for our projects</description>
+    <url>http://www.simplify4u.org</url>
     <inceptionYear>2013</inceptionYear>
 
     <organization>
-        <name>S4U</name>
-        <url>https://github.com/s4u</url>
+        <name>Simplify4U</name>
+        <url>http://www.simplify4u.org</url>
     </organization>
 
     <licenses>
