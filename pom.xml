@@ -19,7 +19,7 @@
     <parent>
         <groupId>com.simpligility.maven</groupId>
         <artifactId>progressive-organization-pom</artifactId>
-        <version>1.5.0</version>
+        <version>1.5.1</version>
         <relativePath />
     </parent>
 
