@@ -24,12 +24,12 @@
     </parent>
 
     <groupId>com.github.s4u</groupId>
-    <artifactId>parent</artifactId>
+    <artifactId>parent-root</artifactId>
     <version>1.0.3-SNAPSHOT</version>
     <packaging>pom</packaging>
 
-    <name>Simplify4U parent POM</name>
-    <description>Simplify4U parent POM for our projects</description>
+    <name>Simplify4U parent POM - root</name>
+    <description>Simplify4U parent POM for our projects - root projects</description>
     <url>http://www.simplify4u.org</url>
     <inceptionYear>2013</inceptionYear>
 
@@ -82,22 +82,12 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
 
-    <build>
-        <pluginManagement>
-            <plugins>
-                <plugin>
-                    <groupId>com.github.s4u.plugins</groupId>
-                    <artifactId>sitemapxml-maven-plugin</artifactId>
-                    <version>1.0.0</version>
-                </plugin>
-                <plugin>
-                    <groupId>com.github.s4u.plugins</groupId>
-                    <artifactId>pgpverify-maven-plugin</artifactId>
-                    <version>1.0.0</version>
-                </plugin>
-            </plugins>
-        </pluginManagement>
+    <modules>
+        <module>parent-sec-rules</module>
+        <module>parent</module>
+    </modules>
 
+    <build>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
