@@ -43,7 +43,10 @@
                 <configuration>
                     <configLocation>/s4u/sec-rules/checkstyle.xml</configLocation>
                     <failOnViolation>true</failOnViolation>
+                    <failsOnError>true</failsOnError>
                     <logViolationsToConsole>true</logViolationsToConsole>
+                    <consoleOutput>true</consoleOutput>
+                    <includeTestSourceDirectory>true</includeTestSourceDirectory>
                     <linkXRef>false</linkXRef>
                 </configuration>
                 <dependencies>
