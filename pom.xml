@@ -80,9 +80,6 @@
         <maven.compiler.showWarnings>true</maven.compiler.showWarnings>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-
-        <checkstyle.version>6.7</checkstyle.version>
-        <pmd.version>5.3.2</pmd.version>
     </properties>
 
     <modules>
