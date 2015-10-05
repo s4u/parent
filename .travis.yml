@@ -1,6 +1,15 @@
+sudo: false
+
 language: java
 install: git clone --depth 1 -b travis git://github.com/s4u/parent.git target/travis
 script: '[ ${TRAVIS_PULL_REQUEST} = ''false'' ] && mvn clean deploy -s target/travis/settings.xml || mvn clean verify'
+
+cache:
+  directories:
+  - $HOME/.m2/repository
+
+before_cache:
+  - find $HOME/.m2/repository -type d -name "*-SNAPSHOT" -prune -print -exec rm -rf {} \;
 
 env:
   global:
