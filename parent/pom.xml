@@ -19,7 +19,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>com.github.s4u</groupId>
+        <groupId>org.simplify4u</groupId>
         <artifactId>parent-root</artifactId>
         <version>2.2.0-SNAPSHOT</version>
     </parent>
@@ -29,6 +29,7 @@
 
     <name>Simplify4U parent POM</name>
     <description>Simplify4U parent POM for our projects</description>
+    <url>http://www.simplify4u.org</url>
 
     <build>
 
@@ -51,7 +52,7 @@
                 </configuration>
                 <dependencies>
                     <dependency>
-                        <groupId>com.github.s4u</groupId>
+                        <groupId>org.simplify4u</groupId>
                         <artifactId>parent-sec-rules</artifactId>
                         <version>2.2.0-SNAPSHOT</version>
                     </dependency>
@@ -79,7 +80,7 @@
                 </configuration>
                 <dependencies>
                     <dependency>
-                        <groupId>com.github.s4u</groupId>
+                        <groupId>org.simplify4u</groupId>
                         <artifactId>parent-sec-rules</artifactId>
                         <version>2.2.0-SNAPSHOT</version>
                     </dependency>

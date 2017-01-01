@@ -23,7 +23,7 @@
         <relativePath />
     </parent>
 
-    <groupId>com.github.s4u</groupId>
+    <groupId>org.simplify4u</groupId>
     <artifactId>parent-root</artifactId>
     <version>2.2.0-SNAPSHOT</version>
     <packaging>pom</packaging>
@@ -80,6 +80,7 @@
         <maven.compiler.showWarnings>true</maven.compiler.showWarnings>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <doxia.module.markdown.version>1.6</doxia.module.markdown.version>
     </properties>
 
     <modules>
@@ -155,7 +156,7 @@
                     <dependency>
                         <groupId>org.apache.maven.doxia</groupId>
                         <artifactId>doxia-module-markdown</artifactId>
-                        <version>1.6</version>
+                        <version>${doxia.module.markdown.version}</version>
                     </dependency>
                 </dependencies>
             </plugin>
