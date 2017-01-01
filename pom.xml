@@ -104,9 +104,8 @@
                 <artifactId>maven-release-plugin</artifactId>
                 <configuration>
                     <preparationGoals>clean</preparationGoals>
-                    <goal>deploy</goal>
+                    <goals>deploy</goals>
                     <releaseProfiles>release</releaseProfiles>
-                    <scmCommentPrefix>[maven-release-plugin][ci skip]_</scmCommentPrefix>
                 </configuration>
             </plugin>
             <plugin>
