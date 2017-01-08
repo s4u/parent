@@ -30,12 +30,12 @@
 
     <name>Simplify4U parent POM - root</name>
     <description>Simplify4U parent POM for our projects - root projects</description>
-    <url>http://www.simplify4u.org</url>
+    <url>https://www.simplify4u.org</url>
     <inceptionYear>2013</inceptionYear>
 
     <organization>
         <name>Simplify4U</name>
-        <url>http://www.simplify4u.org</url>
+        <url>https://www.simplify4u.org</url>
     </organization>
 
     <licenses>

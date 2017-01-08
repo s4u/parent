@@ -29,7 +29,7 @@
 
     <name>Simplify4U parent POM</name>
     <description>Simplify4U parent POM for our projects</description>
-    <url>http://www.simplify4u.org</url>
+    <url>https://www.simplify4u.org</url>
 
     <build>
 
