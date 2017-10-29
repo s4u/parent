@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><!--
-  ~ Copyright 2015 Slawomir Jaranowski
+  ~ Copyright 2017 Slawomir Jaranowski
   ~
   ~ Licensed under the Apache License, Version 2.0 (the "License");
   ~ you may not use this file except in compliance with the License.
@@ -42,6 +42,7 @@
     <rule ref="rulesets/java/optimizations.xml">
         <exclude name="MethodArgumentCouldBeFinal"/>
         <exclude name="LocalVariableCouldBeFinal"/>
+        <exclude name="SimplifyStartsWith"/>
     </rule>
     <rule ref="rulesets/java/strictexception.xml">
         <exclude name="AvoidRethrowingException"/>
