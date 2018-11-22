@@ -23,7 +23,7 @@
     <packaging>pom</packaging>
 
     <name>Simplify4U parent POM - root</name>
-    <description>Simplify4U parent POM for our projects - root projects</description>
+    <description>Simplify4U parent POM for our projects</description>
     <url>https://www.simplify4u.org</url>
     <inceptionYear>2013</inceptionYear>
 
@@ -187,6 +187,8 @@
                     <artifactId>maven-surefire-plugin</artifactId>
                     <version>${maven-surefire-plugin.version}</version>
                     <configuration>
+                        <forkCount>0</forkCount>
+                        <reuseForks>true</reuseForks>
                         <properties>
                             <property>
                                 <name>surefire.testng.verbose</name>
@@ -200,6 +202,8 @@
                     <artifactId>maven-failsafe-plugin</artifactId>
                     <version>${maven-surefire-plugin.version}</version>
                     <configuration>
+                        <forkCount>0</forkCount>
+                        <reuseForks>true</reuseForks>
                         <properties>
                             <property>
                                 <name>surefire.testng.verbose</name>
@@ -378,6 +382,9 @@
                         </goals>
                     </execution>
                 </executions>
+                <configuration>
+                    <append>true</append>
+                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.sonatype.plugins</groupId>
