@@ -89,6 +89,9 @@
 
         <doxia.module.markdown.version>1.8</doxia.module.markdown.version>
 
+        <sonar.leak.period>previous_version</sonar.leak.period>
+        <sonar.junit.reportPaths>target/surefire-reports,target/failsafe-reports</sonar.junit.reportPaths>
+
         <maven.version>3.5</maven.version>
 
         <jacoco-maven-plugin.version>0.8.2</jacoco-maven-plugin.version>
@@ -192,6 +195,10 @@
                                 <name>surefire.testng.verbose</name>
                                 <value>2</value>
                             </property>
+                            <property>
+                                <name>usedefaultlisteners</name>
+                                <value>false</value>
+                            </property>
                         </properties>
                     </configuration>
                 </plugin>
@@ -204,6 +211,10 @@
                             <property>
                                 <name>surefire.testng.verbose</name>
                                 <value>2</value>
+                            </property>
+                            <property>
+                                <name>usedefaultlisteners</name>
+                                <value>false</value>
                             </property>
                         </properties>
                     </configuration>
