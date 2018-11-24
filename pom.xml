@@ -187,8 +187,6 @@
                     <artifactId>maven-surefire-plugin</artifactId>
                     <version>${maven-surefire-plugin.version}</version>
                     <configuration>
-                        <forkCount>0</forkCount>
-                        <reuseForks>true</reuseForks>
                         <properties>
                             <property>
                                 <name>surefire.testng.verbose</name>
@@ -202,8 +200,6 @@
                     <artifactId>maven-failsafe-plugin</artifactId>
                     <version>${maven-surefire-plugin.version}</version>
                     <configuration>
-                        <forkCount>0</forkCount>
-                        <reuseForks>true</reuseForks>
                         <properties>
                             <property>
                                 <name>surefire.testng.verbose</name>
@@ -313,7 +309,7 @@
                     <execution>
                         <id>attach-sources</id>
                         <goals>
-                            <goal>jar</goal>
+                            <goal>jar-no-fork</goal>
                         </goals>
                     </execution>
                 </executions>
