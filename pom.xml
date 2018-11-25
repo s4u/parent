@@ -195,10 +195,6 @@
                                 <name>surefire.testng.verbose</name>
                                 <value>2</value>
                             </property>
-                            <property>
-                                <name>usedefaultlisteners</name>
-                                <value>false</value>
-                            </property>
                         </properties>
                     </configuration>
                 </plugin>
@@ -211,10 +207,6 @@
                             <property>
                                 <name>surefire.testng.verbose</name>
                                 <value>2</value>
-                            </property>
-                            <property>
-                                <name>usedefaultlisteners</name>
-                                <value>false</value>
                             </property>
                         </properties>
                     </configuration>
