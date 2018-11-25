@@ -56,6 +56,16 @@
         <tag>HEAD</tag>
     </scm>
 
+    <issueManagement>
+        <system>github</system>
+        <url>${project.scm.url}/issues</url>
+    </issueManagement>
+
+    <ciManagement>
+        <system>Travis</system>
+        <url>https://travis-ci.org/s4u/${project.artifactId}</url>
+    </ciManagement>
+
     <distributionManagement>
         <snapshotRepository>
             <id>ossrh</id>
@@ -66,16 +76,6 @@
             <url>${project.scm.connection}</url>
         </site>
     </distributionManagement>
-
-    <issueManagement>
-        <system>github</system>
-        <url>${project.scm.url}/issues</url>
-    </issueManagement>
-
-    <ciManagement>
-        <system>Travis</system>
-        <url>https://travis-ci.org/s4u/${project.artifactId}</url>
-    </ciManagement>
 
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
