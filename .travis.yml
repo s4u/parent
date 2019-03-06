@@ -13,6 +13,10 @@ addons:
     token:
       secure: PPOyVrtae4YS1aO7ZHS/YN3yy5Emg6MPsV6pr19MJ59yyN/3BKInoju0sR2z+uN6Lqgldica+cwakflND1HJk19N0xxtF78FTjkM1FeqtPgh/4ofhaGs7aair2wTBtoS+A5V+SbCpoIOpYuMtUCsbV7D5+WgRFyDggeExfQMpXs=
 
+branches:
+  only:
+    - master
+
 install:
     - mkdir -p ../utils
     - curl -Ls https://github.com/s4u/travis/archive/master.tar.gz |
@@ -21,6 +25,7 @@ install:
 script:
     - ../utils/mvn-push.sh clean deploy sonar:sonar
     - ../utils/mvn-pr.sh   clean verify sonar:sonar
+    - env
 
 cache:
   directories:
