@@ -7,6 +7,10 @@ git:
 language: java
 jdk: oraclejdk8
 
+branches:
+  only:
+    - master
+
 addons:
   sonarcloud:
     organization: "simplify4u"
@@ -20,7 +24,7 @@ install:
 
 script:
     - ../utils/mvn-push.sh clean deploy sonar:sonar
-    - ../utils/mvn-pr.sh   clean verify sonar:sonar
+    - ../utils/mvn-pr.sh   clean verify
 
 cache:
   directories:
