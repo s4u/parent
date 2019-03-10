@@ -23,14 +23,15 @@ install:
 
 matrix:
   include:
+
     - jdk: oraclejdk8
       script:
         - ../utils/mvn-push.sh clean deploy sonar:sonar
         - ../utils/mvn-pr.sh   clean verify
+
     - jdk: openjdk11
       script:
-        - ../utils/mvn-push.sh clean verify
-        - ../utils/mvn-pr.sh   clean verify
+        - ../utils/mvn-run.sh clean verify
 
 cache:
   directories:
