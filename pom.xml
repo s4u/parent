@@ -71,10 +71,6 @@
             <id>ossrh</id>
             <url>https://oss.sonatype.org/content/repositories/snapshots</url>
         </snapshotRepository>
-        <site>
-            <id>github-pages</id>
-            <url>${project.scm.connection}</url>
-        </site>
     </distributionManagement>
 
     <properties>
