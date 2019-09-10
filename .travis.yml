@@ -24,20 +24,22 @@ before_script:
 
 jobs:
   include:
-
-    - jdk: openjdk8
+    - name: "buid on main repo - jdk8"
+      jdk: openjdk8
       script:
         - ../utils/mvn-push.sh    clean deploy
         - ../utils/mvn-sec-env.sh sonar:sonar
         - ../utils/mvn-pr.sh      clean verify
+      if: repo = "s4u/parent"
 
-    - name: "build on forks"
+    - name: "build on forks - jdk8"
       jdk: openjdk8
       script:
         - ../utils/mvn-run.sh clean verify
       if: repo != "s4u/parent"
 
-    - jdk: openjdk11
+    - name: "jdk11"
+      jdk: openjdk11
       script:
         - ../utils/mvn-run.sh clean verify
 
