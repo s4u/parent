@@ -63,7 +63,7 @@
 
     <ciManagement>
         <system>Travis</system>
-        <url>https://travis-ci.org/s4u/${project.artifactId}</url>
+        <url>https://travis-ci.com/s4u/${project.artifactId}</url>
     </ciManagement>
 
     <distributionManagement>
