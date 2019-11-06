@@ -6,10 +6,6 @@ git:
 
 language: java
 
-branches:
-  only:
-    - master
-
 addons:
   sonarcloud:
     organization: "simplify4u"

@@ -85,8 +85,12 @@
 
         <doxia.module.markdown.version>1.8</doxia.module.markdown.version>
 
+        <!-- default sonar configuration -->
         <sonar.junit.reportPaths>target/surefire-reports,target/failsafe-reports</sonar.junit.reportPaths>
         <sonar.coverage.jacoco.xmlReportPaths>target/site/jacoco/jacoco.xml,target/site/jacoco-it/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
+        <sonar.host.url>https://sonarcloud.io/</sonar.host.url>
+        <sonar.organization>simplify4u</sonar.organization>
+        <sonar.pullrequest.provider>GitHub</sonar.pullrequest.provider>
 
         <maven.version>3.5</maven.version>
 
