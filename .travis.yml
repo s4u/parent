@@ -25,7 +25,6 @@ jobs:
       script:
         - ../utils/mvn-push.sh    clean deploy
         - ../utils/mvn-pr.sh      clean verify
-        - ../utils/mvn-tag.sh     clean verify
         - ../utils/mvn-sonar.sh   sonar:sonar
       if: repo = "s4u/parent"
 
