@@ -83,7 +83,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-        <doxia.module.markdown.version>1.8</doxia.module.markdown.version>
+        <doxia.module.markdown.version>1.9</doxia.module.markdown.version>
 
         <!-- default sonar configuration -->
         <sonar.junit.reportPaths>target/surefire-reports,target/failsafe-reports</sonar.junit.reportPaths>
@@ -97,28 +97,29 @@
         <maven.version>3.5</maven.version>
 
         <!-- plugins versions -->
-        <jacoco-maven-plugin.version>0.8.2</jacoco-maven-plugin.version>
-        <maven-assembly-plugin.version>3.1.0</maven-assembly-plugin.version>
-        <maven-bundle-plugin.version>4.0.0</maven-bundle-plugin.version>
+        <jacoco-maven-plugin.version>0.8.5</jacoco-maven-plugin.version>
+        <maven-assembly-plugin.version>3.2.0</maven-assembly-plugin.version>
+        <maven-bundle-plugin.version>4.2.1</maven-bundle-plugin.version>
         <maven-clean-plugin.version>3.1.0</maven-clean-plugin.version>
-        <maven-compiler-plugin.version>3.8.0</maven-compiler-plugin.version>
+        <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
         <maven-deploy-plugin.version>3.0.0-M1</maven-deploy-plugin.version>
         <maven-enforcer-plugin.version>3.0.0-M2</maven-enforcer-plugin.version>
         <maven-gpg-plugin.version>1.6</maven-gpg-plugin.version>
         <maven-install-plugin.version>3.0.0-M1</maven-install-plugin.version>
         <maven-invoker-plugin.version>3.2.1</maven-invoker-plugin.version>
         <maven-jar-plugin.version>3.2.0</maven-jar-plugin.version>
-        <maven-javadoc-plugin.version>3.0.1</maven-javadoc-plugin.version>
+        <maven-javadoc-plugin.version>3.1.1</maven-javadoc-plugin.version>
         <maven-plugin-plugin.version>3.6.0</maven-plugin-plugin.version>
         <maven-project-info-reports-plugin.version>3.0.0</maven-project-info-reports-plugin.version>
         <maven-release-plugin.version>2.5.3</maven-release-plugin.version>
         <maven-resources-plugin.version>3.1.0</maven-resources-plugin.version>
         <maven-scm-publish-plugin.version>3.0.0</maven-scm-publish-plugin.version>
-        <maven-site-plugin.version>3.7.1</maven-site-plugin.version>
-        <maven-source-plugin.version>3.0.1</maven-source-plugin.version>
-        <maven-surefire-plugin.version>2.22.0</maven-surefire-plugin.version>
+        <maven-site-plugin.version>3.8.2</maven-site-plugin.version>
+        <maven-source-plugin.version>3.2.0</maven-source-plugin.version>
+        <maven-surefire-plugin.version>3.0.0-M4</maven-surefire-plugin.version>
         <nexus-staging-maven-plugin.version>1.6.8</nexus-staging-maven-plugin.version>
         <plexus-component-metadata.version>2.1.0</plexus-component-metadata.version>
+        <sitemapxml-maven-plugin.version>2.0.0</sitemapxml-maven-plugin.version>
         <versions-maven-plugin.version>2.7</versions-maven-plugin.version>
     </properties>
 
@@ -289,6 +290,11 @@
                     <version>${jacoco-maven-plugin.version}</version>
                 </plugin>
                 <plugin>
+                    <groupId>org.simplify4u.plugins</groupId>
+                    <artifactId>sitemapxml-maven-plugin</artifactId>
+                    <version>${sitemapxml-maven-plugin.version}</version>
+                </plugin>
+                <plugin>
                     <groupId>org.sonatype.plugins</groupId>
                     <artifactId>nexus-staging-maven-plugin</artifactId>
                     <version>${nexus-staging-maven-plugin.version}</version>
@@ -308,6 +314,7 @@
                         </goals>
                         <configuration>
                             <rules>
+                                <DependencyConvergence/>
                                 <requireMavenVersion>
                                     <version>${maven.version}</version>
                                 </requireMavenVersion>
@@ -381,7 +388,7 @@
             <plugin>
                 <groupId>org.simplify4u.plugins</groupId>
                 <artifactId>sitemapxml-maven-plugin</artifactId>
-                <version>2.0.0</version>
+                <version>${sitemapxml-maven-plugin.version}</version>
                 <executions>
                     <execution>
                         <goals>
