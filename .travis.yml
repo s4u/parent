@@ -22,10 +22,10 @@ jobs:
   include:
     - name: "jdk8"
       jdk: openjdk8
-      script:
-        - ../utils/mvn-push.sh    clean deploy
-        - ../utils/mvn-pr.sh      clean verify
-        - ../utils/mvn-sonar.sh   sonar:sonar
+      script: >-
+        ../utils/mvn-push.sh    clean deploy &&
+        ../utils/mvn-pr.sh      clean verify &&
+        ../utils/mvn-sonar.sh   sonar:sonar
       if: repo = "s4u/parent"
 
     - name: "jdk8 - forks"
@@ -42,6 +42,7 @@ jobs:
 cache:
   directories:
   - $HOME/.m2/repository
+  - $HOME/.sonar/cache
 
 before_cache:
   - rm -rfv $HOME/.m2/repository/org/simplify4u/parent*
