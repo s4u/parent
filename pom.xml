@@ -82,7 +82,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-        <doxia.module.markdown.version>1.9</doxia.module.markdown.version>
+        <doxia.module.markdown.version>1.9.1</doxia.module.markdown.version>
 
         <!-- default sonar configuration -->
         <sonar.junit.reportPaths>target/surefire-reports,target/failsafe-reports</sonar.junit.reportPaths>
