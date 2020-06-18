@@ -18,7 +18,7 @@
 
     <groupId>org.simplify4u</groupId>
     <artifactId>parent</artifactId>
-    <version>2.5.1-SNAPSHOT</version>
+    <version>2.6.0</version>
     <packaging>pom</packaging>
 
     <name>Simplify4U parent POM</name>
@@ -52,7 +52,7 @@
         <connection>scm:git:git@github.com:s4u/parent.git</connection>
         <developerConnection>${project.scm.connection}</developerConnection>
         <url>https://github.com/s4u/parent</url>
-        <tag>HEAD</tag>
+        <tag>v2.6.0</tag>
     </scm>
 
     <issueManagement>
@@ -284,7 +284,7 @@
                             <groupId>org.simplify4u</groupId>
                             <artifactId>parent</artifactId>
                             <classifier>resources</classifier>
-                            <version>2.5.1-SNAPSHOT</version>
+                            <version>2.6.0</version>
                         </dependency>
                     </dependencies>
                 </plugin>
