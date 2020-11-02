@@ -104,7 +104,7 @@ jobs:
       - uses: s4u/maven-settings-action@v2.2.0
         with:
           sonatypeSnapshots: true
-          servers: '[{"id": "ossrh", "username": "${env.OSS_USER}", "password": "${env.OSS_PASS"}]'
+          servers: '[{"id": "ossrh", "username": "${env.OSS_USER}", "password": "${env.OSS_PASS}"]'
 
       - run: mvn deploy -Dmaven.test.skip=true
         env:
