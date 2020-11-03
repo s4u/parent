@@ -9,7 +9,7 @@ on:
 jobs:
 
   verify:
-    name: verify-${{ matrix.os }}-jdk${{ matrix.java }}
+    name: Build ${{ matrix.os }} jdk${{ matrix.java }}
     if: startsWith( github.event.head_commit.message , '[maven-release-plugin] prepare release') != true
 
     runs-on: ${{ matrix.os }}
@@ -43,7 +43,7 @@ jobs:
       - run: mvn verify
 
   sonar:
-    name: sonar
+    name: Build Sonar ubuntu-latest jdk11
     if: startsWith( github.event.head_commit.message , '[maven-release-plugin] prepare release') != true
 
     needs: verify
@@ -78,7 +78,7 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
   deploy:
-    name: deploy
+    name: Build Deploy ubuntu-latest jdk8
     if: >
       startsWith( github.event.head_commit.message , '[maven-release-plugin] prepare release') != true
       && github.repository_owner == 's4u'
@@ -110,4 +110,3 @@ jobs:
         env:
           OSS_USER: ${{ secrets.OSS_USER }}
           OSS_PASS: ${{ secrets.OSS_PASS }}
-
