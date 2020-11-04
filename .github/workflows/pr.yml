@@ -76,7 +76,7 @@ jobs:
           mvn sonar:sonar
           -Dsonar.pullrequest.key=${{ github.event.number }}
           -Dsonar.pullrequest.base="${{ github.event.pull_request.base.ref }}"
-          -Donar.pullrequest.branch="${{ github.event.pull_request.head.label }}"
+          -Dsonar.pullrequest.branch="${{ github.event.pull_request.head.label }}"
           -Dsonar.pullrequest.github.repository="${{ github.repository }}"
 
         if: github.repository_owner == 's4u'
