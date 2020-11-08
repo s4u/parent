@@ -76,7 +76,7 @@
         </repository>
         <site>
             <id>github</id>
-            <url>${dist.site.url}</url>
+            <url>${project.scm.connection}</url>
         </site>
     </distributionManagement>
 
@@ -98,7 +98,7 @@
 
         <!-- site config -->
         <github.repo>${project.artifactId}</github.repo>
-        <dist.site.url>${project.scm.connection}</dist.site.url>
+        <scmpublish.dryRun>true</scmpublish.dryRun>
 
         <maven.version>3.5</maven.version>
 
@@ -377,7 +377,6 @@
                 <configuration>
                     <scmBranch>gh-pages</scmBranch>
                     <content>${project.reporting.outputDirectory}</content>
-                    <dryRun>true</dryRun>
                 </configuration>
                 <executions>
                     <execution>
