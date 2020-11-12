@@ -42,7 +42,7 @@
 
     <body>
         <head>
-            <![CDATA[<script async src="${project.organization.url}/gtag.js" type="text/javascript"></script>]]>
+            <![CDATA[<script async src="${project.organization.url}/common.js" type="text/javascript"></script>]]>
         </head>
 
         <breadcrumbs>
