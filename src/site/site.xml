@@ -63,7 +63,8 @@
             <item name="Fatek PLC client" href="../jfatek/index.html"/>
             <item name="Sitemap generator for maven site" href="../sitemapxml-maven-plugin/index.html"/>
             <item name="SLF4J mock" href="../slf4j-mock/index.html"/>
-            <item name="Verify PGP signatures" href="../pgpverify-maven-plugin/index.html"/>
+            <item name="Verify OpenPGP signatures" href="../pgpverify-maven-plugin/index.html"/>
+            <item name="Create OpenPGP signatures" href="../sign-maven-plugin/index.html"/>
 
             <!-- projects without site -->
             <item name="PGP keys map to artifacts" href="https://github.com/s4u/pgp-keys-map"/>
