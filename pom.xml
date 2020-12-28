@@ -101,7 +101,7 @@
         <github.repo>${project.artifactId}</github.repo>
         <scmpublish.dryRun>true</scmpublish.dryRun>
 
-        <maven.version>3.5</maven.version>
+        <maven.version>3.6.0</maven.version>
 
         <!-- plugins versions -->
         <build-helper-maven-plugin.version>3.2.0</build-helper-maven-plugin.version>
