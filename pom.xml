@@ -101,6 +101,9 @@
         <github.repo>${project.artifactId}</github.repo>
         <scmpublish.dryRun>true</scmpublish.dryRun>
 
+        <!-- auto release to Central after deploy to https://oss.sonatype.org/ staging -->
+        <oss.auto.release>true</oss.auto.release>
+
         <maven.version>3.6.0</maven.version>
 
         <!-- plugins versions -->
@@ -434,6 +437,7 @@
                 <configuration>
                     <serverId>ossrh</serverId>
                     <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+                    <autoReleaseAfterClose>${oss.auto.release}</autoReleaseAfterClose>
                 </configuration>
             </plugin>
 
