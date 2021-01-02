@@ -207,6 +207,7 @@
                     <configuration>
                         <source>${maven.compiler.source}</source>
                         <quiet>true</quiet>
+                        <notimestamp>true</notimestamp>
                     </configuration>
                 </plugin>
                 <plugin>
