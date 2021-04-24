@@ -244,6 +244,7 @@
                         <goals>deploy</goals>
                         <autoVersionSubmodules>true</autoVersionSubmodules>
                         <tagNameFormat>v@{project.version}</tagNameFormat>
+                        <signTag>true</signTag>
                     </configuration>
                 </plugin>
                 <plugin>
