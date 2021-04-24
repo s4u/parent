@@ -136,7 +136,6 @@
     </properties>
 
     <build>
-
         <pluginManagement>
             <plugins>
                 <plugin>
@@ -426,7 +425,6 @@
                     <autoReleaseAfterClose>${oss.auto.release}</autoReleaseAfterClose>
                 </configuration>
             </plugin>
-
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-assembly-plugin</artifactId>
@@ -450,7 +448,6 @@
                     </execution>
                 </executions>
             </plugin>
-
         </plugins>
     </build>
 
@@ -479,15 +476,7 @@
 
     <profiles>
         <profile>
-            <!-- does some action if maven.test.skip != true -->
-            <id>testing</id>
-            <activation>
-                <property>
-                    <name>maven.test.skip</name>
-                    <value>!true</value>
-                </property>
-            </activation>
-
+            <id>coverage</id>
             <build>
                 <plugins>
                     <plugin>
@@ -495,97 +484,21 @@
                         <artifactId>jacoco-maven-plugin</artifactId>
                         <executions>
                             <execution>
-                                <id>default-prepare-agent</id>
                                 <goals>
                                     <goal>prepare-agent</goal>
-                                </goals>
-                            </execution>
-                            <execution>
-                                <id>default-prepare-agent-integration</id>
-                                <goals>
                                     <goal>prepare-agent-integration</goal>
-                                </goals>
-                            </execution>
-                            <execution>
-                                <id>default-report</id>
-                                <goals>
                                     <goal>report</goal>
-                                </goals>
-                            </execution>
-                            <execution>
-                                <id>default-report-integration</id>
-                                <goals>
                                     <goal>report-integration</goal>
                                 </goals>
                             </execution>
                         </executions>
                         <configuration>
                             <append>true</append>
+                            <includes>
+                                <!-- only instrument classes from our package -->
+                                <include>org/simplify4u/**</include>
+                            </includes>
                         </configuration>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-
-        <profile>
-            <!-- does some action if maven.test.skip == true -->
-            <id>not-testing</id>
-            <activation>
-                <property>
-                    <name>maven.test.skip</name>
-                    <value>true</value>
-                </property>
-            </activation>
-
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-resources-plugin</artifactId>
-                        <executions>
-                            <execution>
-                                <id>default-testResources</id>
-                                <phase>none</phase>
-                            </execution>
-                        </executions>
-                    </plugin>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-compiler-plugin</artifactId>
-                        <executions>
-                            <execution>
-                                <id>default-testCompile</id>
-                                <phase>none</phase>
-                            </execution>
-                        </executions>
-                    </plugin>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-surefire-plugin</artifactId>
-                        <executions>
-                            <execution>
-                                <id>default-test</id>
-                                <phase>none</phase>
-                            </execution>
-                        </executions>
-                    </plugin>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-failsafe-plugin</artifactId>
-                        <executions>
-                            <execution>
-                                <phase>none</phase>
-                            </execution>
-                        </executions>
-                    </plugin>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-invoker-plugin</artifactId>
-                        <executions>
-                            <execution>
-                                <phase>none</phase>
-                            </execution>
-                        </executions>
                     </plugin>
                 </plugins>
             </build>
