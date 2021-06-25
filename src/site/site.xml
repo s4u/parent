@@ -37,6 +37,10 @@
             <facebookLike>
                 <shareButton>true</shareButton>
             </facebookLike>
+            <twitter>
+                <user>Simplify4U</user>
+                <showUser>true</showUser>
+            </twitter>
         </fluidoSkin>
     </custom>
 
