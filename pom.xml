@@ -158,7 +158,6 @@
                         <optimize>true</optimize>
                         <showDeprecation>true</showDeprecation>
                         <showWarnings>true</showWarnings>
-                        <failOnWarning>true</failOnWarning>
                         <compilerArgs>
                             <arg>-Xlint:all,-options,-processing</arg>
                         </compilerArgs>
