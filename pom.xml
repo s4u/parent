@@ -18,7 +18,7 @@
 
     <groupId>org.simplify4u</groupId>
     <artifactId>parent</artifactId>
-    <version>2.13.1-SNAPSHOT</version>
+    <version>2.14.0</version>
     <packaging>pom</packaging>
 
     <name>Simplify4U parent POM</name>
@@ -53,7 +53,7 @@
         <connection>scm:git:git@github.com:s4u/parent</connection>
         <developerConnection>${project.scm.connection}</developerConnection>
         <url>https://github.com/s4u/parent</url>
-        <tag>HEAD</tag>
+        <tag>v2.14.0</tag>
     </scm>
 
     <issueManagement>
@@ -107,7 +107,7 @@
         <maven.version>3.6.0</maven.version>
 
         <!-- reproducible build -->
-        <project.build.outputTimestamp>2021-08-29T00:00:00Z</project.build.outputTimestamp>
+        <project.build.outputTimestamp>2021-08-29T08:46:13Z</project.build.outputTimestamp>
 
         <!-- plugins versions -->
         <build-helper-maven-plugin.version>3.2.0</build-helper-maven-plugin.version>
@@ -281,7 +281,7 @@
                             <groupId>org.simplify4u</groupId>
                             <artifactId>parent</artifactId>
                             <classifier>resources</classifier>
-                            <version>2.13.1-SNAPSHOT</version>
+                            <version>2.14.0</version>
                         </dependency>
                     </dependencies>
                 </plugin>
