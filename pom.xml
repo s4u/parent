@@ -510,6 +510,18 @@
         </profile>
 
         <profile>
+            <id>ci-system</id>
+            <activation>
+                <property>
+                    <name>env.CI</name>
+                </property>
+            </activation>
+            <properties>
+                <invoker.streamLogsOnFailures>true</invoker.streamLogsOnFailures>
+            </properties>
+        </profile>
+
+        <profile>
             <id>update-show</id>
             <build>
                 <defaultGoal>validate</defaultGoal>
