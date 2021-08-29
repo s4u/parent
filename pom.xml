@@ -106,6 +106,9 @@
 
         <maven.version>3.6.0</maven.version>
 
+        <!-- reproducible build -->
+        <project.build.outputTimestamp>2021-08-29T00:00:00Z</project.build.outputTimestamp>
+
         <!-- plugins versions -->
         <build-helper-maven-plugin.version>3.2.0</build-helper-maven-plugin.version>
         <jacoco-maven-plugin.version>0.8.7</jacoco-maven-plugin.version>
