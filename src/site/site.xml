@@ -75,7 +75,7 @@
 
             <!-- github actions -->
             <item name="Github Actions for setup maven settings.xml"
-                  href="https://github.com/s4u/maven-settings-action"/>
+                  href="https://github.com/marketplace/actions/maven-settings-action"/>
         </menu>
 
 
