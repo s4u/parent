@@ -74,11 +74,11 @@
             <item name="PGP keys map to artifacts" href="https://github.com/s4u/pgp-keys-map"/>
 
             <!-- github actions -->
-            <item name="Github Actions for setup maven settings.xml"
+            <item name="Setup Maven -&amp;nbsp;GitHub&amp;nbsp;Action"
+                  href="https://github.com/marketplace/actions/setup-maven-action"/>
+            <item name="Customize Maven settings.xml -&amp;nbsp;GitHub&amp;nbsp;Action"
                   href="https://github.com/marketplace/actions/maven-settings-action"/>
         </menu>
-
-
     </body>
 
 </project>
