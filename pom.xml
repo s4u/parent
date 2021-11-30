@@ -82,8 +82,9 @@
     </distributionManagement>
 
     <properties>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
+        <java.target>8</java.target>
+        <maven.compiler.source>1.${java.target}</maven.compiler.source>
+        <maven.compiler.target>1.${java.target}</maven.compiler.target>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -166,8 +167,6 @@
                     <artifactId>maven-compiler-plugin</artifactId>
                     <version>${maven-compiler-plugin.version}</version>
                     <configuration>
-                        <source>${maven.compiler.source}</source>
-                        <target>${maven.compiler.target}</target>
                         <optimize>true</optimize>
                         <showDeprecation>true</showDeprecation>
                         <showWarnings>true</showWarnings>
@@ -216,7 +215,6 @@
                     <artifactId>maven-javadoc-plugin</artifactId>
                     <version>${maven-javadoc-plugin.version}</version>
                     <configuration>
-                        <source>${maven.compiler.source}</source>
                         <quiet>true</quiet>
                         <notimestamp>true</notimestamp>
                     </configuration>
@@ -490,6 +488,16 @@
     </reporting>
 
     <profiles>
+        <profile>
+            <id>jdk9+</id>
+            <activation>
+                <jdk>[9,)</jdk>
+            </activation>
+            <properties>
+                <maven.compiler.release>${java.target}</maven.compiler.release>
+            </properties>
+        </profile>
+
         <profile>
             <id>coverage</id>
             <build>
