@@ -6,12 +6,3 @@ updates:
     schedule:
       interval: daily
 
-    ignore:
-
-      - dependency-name: org.apache.maven.plugins:maven-dependency-plugin
-        versions: [ "3.2.0" ]
-
-      - dependency-name: org.apache.maven.plugins:maven-enforcer-plugin
-        versions: [ "3.0.0" ]
-
-
