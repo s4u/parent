@@ -111,7 +111,7 @@
         <project.build.outputTimestamp>2023-06-09T12:24:22Z</project.build.outputTimestamp>
 
         <!-- plugins versions -->
-        <build-helper-maven-plugin.version>3.4.0</build-helper-maven-plugin.version>
+        <build-helper-maven-plugin.version>3.5.0</build-helper-maven-plugin.version>
         <jacoco-maven-plugin.version>0.8.11</jacoco-maven-plugin.version>
         <maven-assembly-plugin.version>3.6.0</maven-assembly-plugin.version>
         <maven-bundle-plugin.version>5.1.9</maven-bundle-plugin.version>
