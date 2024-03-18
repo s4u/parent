@@ -121,6 +121,7 @@
         <maven-deploy-plugin.version>3.1.1</maven-deploy-plugin.version>
         <maven-enforcer-plugin.version>3.4.1</maven-enforcer-plugin.version>
         <maven-fluido-skin.version>1.12.0</maven-fluido-skin.version>
+        <maven-gpg-plugin.version>3.2.1</maven-gpg-plugin.version>
         <maven-install-plugin.version>3.1.1</maven-install-plugin.version>
         <maven-invoker-plugin.version>3.6.0</maven-invoker-plugin.version>
         <maven-jar-plugin.version>3.3.0</maven-jar-plugin.version>
@@ -135,7 +136,6 @@
         <maven-surefire-plugin.version>3.2.5</maven-surefire-plugin.version>
         <nexus-staging-maven-plugin.version>1.6.13</nexus-staging-maven-plugin.version>
         <plexus-component-metadata.version>2.2.0</plexus-component-metadata.version>
-        <sign-maven-plugin.version>1.1.0</sign-maven-plugin.version>
         <sitemapxml-maven-plugin.version>2.2.0</sitemapxml-maven-plugin.version>
         <versions-maven-plugin.version>2.16.2</versions-maven-plugin.version>
     </properties>
@@ -199,6 +199,15 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-enforcer-plugin</artifactId>
                     <version>${maven-enforcer-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-gpg-plugin</artifactId>
+                    <version>${maven-gpg-plugin.version}</version>
+                    <configuration>
+                        <signer>bc</signer>
+                        <keyFilePath>${user.home}/.m2/sign-key.asc</keyFilePath>
+                    </configuration>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -315,11 +324,6 @@
                 </plugin>
                 <plugin>
                     <groupId>org.simplify4u.plugins</groupId>
-                    <artifactId>sign-maven-plugin</artifactId>
-                    <version>${sign-maven-plugin.version}</version>
-                </plugin>
-                <plugin>
-                    <groupId>org.simplify4u.plugins</groupId>
                     <artifactId>sitemapxml-maven-plugin</artifactId>
                     <version>${sitemapxml-maven-plugin.version}</version>
                 </plugin>
@@ -414,8 +418,8 @@
                 </configuration>
             </plugin>
             <plugin>
-                <groupId>org.simplify4u.plugins</groupId>
-                <artifactId>sign-maven-plugin</artifactId>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-gpg-plugin</artifactId>
                 <executions>
                     <execution>
                         <goals>
@@ -498,6 +502,22 @@
     </reporting>
 
     <profiles>
+        <profile>
+            <!-- skip gpg executing - if key is not available -->
+            <id>skip-gpg</id>
+            <activation>
+                <property>
+                    <name>!env.MAVEN_GPG_KEY</name>
+                </property>
+                <file>
+                    <missing>${user.home}/.m2/sign-key.asc</missing>
+                </file>
+            </activation>
+            <properties>
+                <gpg.skip>true</gpg.skip>
+            </properties>
+        </profile>
+
         <profile>
             <id>jdk9+</id>
             <activation>
