@@ -105,7 +105,7 @@
         <!-- auto release to Central after deploy to https://oss.sonatype.org/ staging -->
         <oss.auto.release>true</oss.auto.release>
 
-        <maven.version>3.6.0</maven.version>
+        <mavenVersion>3.6.3</mavenVersion>
 
         <!-- reproducible build -->
         <project.build.outputTimestamp>2024-02-20T17:45:29Z</project.build.outputTimestamp>
@@ -349,7 +349,7 @@
                             <rules>
                                 <DependencyConvergence />
                                 <requireMavenVersion>
-                                    <version>${maven.version}</version>
+                                    <version>${mavenVersion}</version>
                                 </requireMavenVersion>
                                 <requireJavaVersion>
                                     <version>${maven.compiler.target}</version>
