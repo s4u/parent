@@ -67,14 +67,16 @@
     </ciManagement>
 
     <distributionManagement>
-        <snapshotRepository>
-            <id>ossrh</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-        </snapshotRepository>
         <repository>
-            <id>ossrh</id>
-            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+            <id>sonatype-central-portal</id>
+            <name>Sonatype Central Portal</name>
+            <url>https://repo.maven.apache.org/maven2</url>
         </repository>
+        <snapshotRepository>
+            <id>sonatype-central-portal</id>
+            <name>Sonatype Central Snapshots</name>
+            <url>https://central.sonatype.com/repository/maven-snapshots</url>
+        </snapshotRepository>
         <site>
             <id>github</id>
             <url>${project.scm.connection}</url>
@@ -102,8 +104,11 @@
         <github.repo>${project.artifactId}</github.repo>
         <scmpublish.dryRun>true</scmpublish.dryRun>
 
-        <!-- auto release to Central after deploy to https://oss.sonatype.org/ staging -->
-        <oss.auto.release>true</oss.auto.release>
+        <!-- njord configuration -->
+        <njord.autoPublish>true</njord.autoPublish>
+        <njord.publishingType>automatic</njord.publishingType>
+        <njord.waitForStates>true</njord.waitForStates>
+        <njord.enabled>false</njord.enabled>
 
         <mavenVersion>3.6.3</mavenVersion>
 
@@ -111,6 +116,7 @@
         <project.build.outputTimestamp>2025-03-02T09:20:43Z</project.build.outputTimestamp>
 
         <!-- plugins versions -->
+        <njord.version>0.7.5</njord.version>
         <build-helper-maven-plugin.version>3.6.1</build-helper-maven-plugin.version>
         <jacoco-maven-plugin.version>0.8.13</jacoco-maven-plugin.version>
         <maven-assembly-plugin.version>3.7.1</maven-assembly-plugin.version>
@@ -156,8 +162,21 @@
     </dependencyManagement>
 
     <build>
+        <extensions>
+            <extension>
+                <groupId>eu.maveniverse.maven.njord</groupId>
+                <artifactId>extension</artifactId>
+                <version>${njord.version}</version>
+            </extension>
+        </extensions>
+
         <pluginManagement>
             <plugins>
+                <plugin>
+                    <groupId>eu.maveniverse.maven.plugins</groupId>
+                    <artifactId>njord</artifactId>
+                    <version>${njord.version}</version>
+                </plugin>
                 <plugin>
                     <groupId>org.apache.felix</groupId>
                     <artifactId>maven-bundle-plugin</artifactId>
@@ -273,6 +292,7 @@
                         <autoVersionSubmodules>true</autoVersionSubmodules>
                         <tagNameFormat>v@{project.version}</tagNameFormat>
                         <signTag>true</signTag>
+                        <releaseProfiles>s4u-release</releaseProfiles>
                     </configuration>
                 </plugin>
                 <plugin>
@@ -326,11 +346,6 @@
                     <groupId>org.simplify4u.plugins</groupId>
                     <artifactId>sitemapxml-maven-plugin</artifactId>
                     <version>${sitemapxml-maven-plugin.version}</version>
-                </plugin>
-                <plugin>
-                    <groupId>org.sonatype.plugins</groupId>
-                    <artifactId>nexus-staging-maven-plugin</artifactId>
-                    <version>${nexus-staging-maven-plugin.version}</version>
                 </plugin>
             </plugins>
         </pluginManagement>
@@ -440,16 +455,6 @@
                 </executions>
             </plugin>
             <plugin>
-                <groupId>org.sonatype.plugins</groupId>
-                <artifactId>nexus-staging-maven-plugin</artifactId>
-                <extensions>true</extensions>
-                <configuration>
-                    <serverId>ossrh</serverId>
-                    <nexusUrl>https://oss.sonatype.org/</nexusUrl>
-                    <autoReleaseAfterClose>${oss.auto.release}</autoReleaseAfterClose>
-                </configuration>
-            </plugin>
-            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-assembly-plugin</artifactId>
                 <inherited>false</inherited>
@@ -502,6 +507,12 @@
     </reporting>
 
     <profiles>
+        <profile>
+            <id>s4u-release</id>
+            <properties>
+                <njord.enabled>true</njord.enabled>
+            </properties>
+        </profile>
         <profile>
             <!-- skip gpg executing - if key is not available -->
             <id>skip-gpg</id>
