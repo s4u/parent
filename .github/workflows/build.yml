@@ -7,7 +7,6 @@ on:
       - 'main'
     tags:
       - 'v*'
-  workflow_dispatch:
 
   schedule:
     - cron: '55 5 * * 5'
