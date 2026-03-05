@@ -118,7 +118,7 @@
         <project.build.outputTimestamp>2025-12-29T22:35:40Z</project.build.outputTimestamp>
 
         <!-- plugins versions -->
-        <njord.version>0.9.3</njord.version>
+        <njord.version>0.9.4</njord.version>
         <build-helper-maven-plugin.version>3.6.1</build-helper-maven-plugin.version>
         <jacoco-maven-plugin.version>0.8.14</jacoco-maven-plugin.version>
         <maven-assembly-plugin.version>3.8.0</maven-assembly-plugin.version>
