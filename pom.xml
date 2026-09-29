@@ -143,6 +143,7 @@
         <maven-source-plugin.version>3.4.0</maven-source-plugin.version>
         <maven-surefire-plugin.version>3.6.0</maven-surefire-plugin.version>
         <nexus-staging-maven-plugin.version>1.7.0</nexus-staging-maven-plugin.version>
+        <pgpverify-maven-plugin.version>1.19.1</pgpverify-maven-plugin.version>
         <plexus-component-metadata.version>2.2.0</plexus-component-metadata.version>
         <sitemapxml-maven-plugin.version>2.2.0</sitemapxml-maven-plugin.version>
         <versions-maven-plugin.version>2.22.0</versions-maven-plugin.version>
@@ -343,6 +344,11 @@
                     <groupId>org.jacoco</groupId>
                     <artifactId>jacoco-maven-plugin</artifactId>
                     <version>${jacoco-maven-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.simplify4u.plugins</groupId>
+                    <artifactId>pgpverify-maven-plugin</artifactId>
+                    <version>${pgpverify-maven-plugin.version}</version>
                 </plugin>
                 <plugin>
                     <groupId>org.simplify4u.plugins</groupId>
