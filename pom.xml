@@ -145,7 +145,7 @@
         <pgpverify-maven-plugin.version>1.19.1</pgpverify-maven-plugin.version>
         <plexus-component-metadata.version>2.2.0</plexus-component-metadata.version>
         <sitemapxml-maven-plugin.version>2.2.0</sitemapxml-maven-plugin.version>
-        <versions-maven-plugin.version>2.22.0</versions-maven-plugin.version>
+        <versions-maven-plugin.version>2.23.0</versions-maven-plugin.version>
     </properties>
 
     <dependencyManagement>
